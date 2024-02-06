@@ -3,50 +3,18 @@
   "last_link_id": 3,
   "nodes": [
     {
-      "id": 1,
-      "type": "DynamiCrafterLoader",
-      "pos": [
-        193,
-        148
-      ],
-      "size": {
-        "0": 315,
-        "1": 58
-      },
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "model",
-          "type": "DynamiCrafter",
-          "links": [
-            1
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "DynamiCrafterLoader"
-      },
-      "widgets_values": [
-        "576_1024"
-      ]
-    },
-    {
       "id": 3,
       "type": "LoadImage",
       "pos": [
         143,
         296
       ],
-      "size": [
-        315,
-        314
-      ],
+      "size": {
+        "0": 315,
+        "1": 314
+      },
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "outputs": [
         {
@@ -72,47 +40,6 @@
         "00031-4116268099-1girl_AND trees_AND grass_AND sky_AND 1girl (1).png",
         "image"
       ]
-    },
-    {
-      "id": 4,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        1061.3333740234375,
-        144
-      ],
-      "size": {
-        "0": 315,
-        "1": 250
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 3
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "VHS_VideoCombine"
-      },
-      "widgets_values": {
-        "frame_rate": 8,
-        "loop_count": 0,
-        "filename_prefix": "AnimateDiff",
-        "format": "image/gif",
-        "pingpong": false,
-        "save_image": true,
-        "crf": 20,
-        "save_metadata": true,
-        "audio_file": "",
-        "videopreview": {
-          "hidden": false,
-          "paused": false
-        }
-      }
     },
     {
       "id": 2,
@@ -155,13 +82,93 @@
         "Node name for S&R": "DynamiCrafter Simple"
       },
       "widgets_values": [
-        "1girl",
+        "1girl sleeping",
         50,
         7.5,
         1,
         3,
-        1240,
+        1022,
         "randomize"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        1061,
+        144
+      ],
+      "size": [
+        315,
+        414.3125
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 8,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "image/gif",
+        "pingpong": false,
+        "save_image": true,
+        "crf": 20,
+        "save_metadata": true,
+        "audio_file": "",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00900.gif",
+            "subfolder": "",
+            "type": "output",
+            "format": "image/gif"
+          }
+        }
+      }
+    },
+    {
+      "id": 1,
+      "type": "DynamiCrafterLoader",
+      "pos": [
+        193,
+        148
+      ],
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "model",
+          "type": "DynamiCrafter",
+          "links": [
+            1
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DynamiCrafterLoader"
+      },
+      "widgets_values": [
+        "576_1024",
+        16
       ]
     }
   ],

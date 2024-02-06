@@ -15,7 +15,7 @@ models_path=f'{comfy_path}/models/'
 config_path=f'{comfy_path}/custom_nodes/ComfyUI-DynamiCrafter/'
 
 class Image2Video():
-    def __init__(self,result_dir='./tmp/',gpu_num=1,resolution='256_256') -> None:
+    def __init__(self,result_dir='./tmp/',gpu_num=1,resolution='256_256',frame_length=16) -> None:
         self.resolution = (int(resolution.split('_')[0]), int(resolution.split('_')[1])) #hw
         self.download_model()
         
@@ -25,6 +25,7 @@ class Image2Video():
         ckpt_path=models_path+'checkpoints/dynamicrafter_'+resolution.split('_')[1]+'_v1/model.ckpt'
         config_file=config_path+'configs/inference_'+resolution.split('_')[1]+'_v1.0.yaml'
         config = OmegaConf.load(config_file)
+        OmegaConf.update(config, "model.params.unet_config.params.temporal_length", frame_length)
         model_config = config.pop("model", OmegaConf.create())
         model_config['params']['unet_config']['params']['use_checkpoint']=False   
         model_list = []

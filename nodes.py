@@ -11,6 +11,7 @@ class DynamiCrafterLoader:
         return {
             "required": {
                 "resolution": (resolutions,{"default":"576_1024"}),
+                "frame_length": ("INT",{"default":16})
             }
         }
 
@@ -19,8 +20,8 @@ class DynamiCrafterLoader:
     FUNCTION = "run_inference"
     CATEGORY = "DynamiCrafter"
 
-    def run_inference(self,resolution):
-        image2video = Image2Video('./tmp/', resolution=resolution)
+    def run_inference(self,resolution,frame_length=16):
+        image2video = Image2Video('./tmp/', resolution=resolution,frame_length=frame_length)
         return (image2video,)
 
 class DynamiCrafterSimple:
