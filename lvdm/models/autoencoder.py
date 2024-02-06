@@ -6,8 +6,8 @@ from einops import rearrange
 import torch.nn.functional as F
 import pytorch_lightning as pl
 from ..modules.networks.ae_modules import Encoder, Decoder
-from .distributions import DiagonalGaussianDistribution
-from ...utils import instantiate_from_config
+from ..distributions import DiagonalGaussianDistribution
+from ...utils.utils import instantiate_from_config
 
 
 class AutoencoderKL(pl.LightningModule):

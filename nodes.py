@@ -48,7 +48,7 @@ class DynamiCrafterSimple:
         image = 255.0 * image[0].cpu().numpy()
         #image = Image.fromarray(np.clip(image, 0, 255).astype(np.uint8))
         
-        imgs= image2video.get_image(image, prompt, steps, cfg_scale, eta, motion, seed)
+        imgs= model.get_image(image, prompt, steps, cfg_scale, eta, motion, seed)
         return imgs
 
 

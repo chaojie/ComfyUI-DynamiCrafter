@@ -6,6 +6,8 @@ ComfyUI DynamiCrafter
 
 base workflow
 
-<img src="assets/wf_basic.png" raw=true>
+<img src="wf_basic.png" raw=true>
 
 https://github.com/chaojie/ComfyUI-DynamiCrafter/blob/main/workflow.json
+
+<img src="video.gif" raw=true>
