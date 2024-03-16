@@ -23,7 +23,7 @@ class DynamiCrafterInterpLoader:
     CATEGORY = "DynamiCrafter"
 
     def run_inference(self,resolution,frame_length=16):
-        image2video = Image2Video('./tmp/', resolution=resolution,frame_length=frame_length)
+        image2video = Image2VideoInterp('./tmp/', resolution=resolution,frame_length=frame_length)
         return (image2video,)
         
 class DynamiCrafterLoader:

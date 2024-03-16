@@ -22,7 +22,7 @@ class Image2Video():
         self.result_dir = result_dir
         if not os.path.exists(self.result_dir):
             os.mkdir(self.result_dir)
-        ckpt_path=models_path+'checkpoints/dynamicrafter_'+resolution.split('_')[1]+'_v1/model.ckpt'
+        ckpt_path=models_path+'checkpoints/dynamicrafter_'+resolution.split('_')[1]+'_interp_v1/model.ckpt'
         config_file=config_path+'configs/inference_'+resolution.split('_')[1]+'_v1.0.yaml'
         config = OmegaConf.load(config_file)
         OmegaConf.update(config, "model.params.unet_config.params.temporal_length", frame_length)
