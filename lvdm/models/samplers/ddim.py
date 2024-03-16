@@ -5,7 +5,7 @@ from ..utils_diffusion import make_ddim_sampling_parameters, make_ddim_timesteps
 from ...common import noise_like
 from ...common import extract_into_tensor
 import copy
-
+import comfy.utils
 
 class DDIMSampler(object):
     def __init__(self, model, schedule="linear", **kwargs):
@@ -166,6 +166,7 @@ class DDIMSampler(object):
         clean_cond = kwargs.pop("clean_cond", False)
 
         # cond_copy, unconditional_conditioning_copy = copy.deepcopy(cond), copy.deepcopy(unconditional_conditioning)
+        pbar = comfy.utils.ProgressBar(total_steps)
         for i, step in enumerate(iterator):
             index = total_steps - i - 1
             ts = torch.full((b,), step, device=device, dtype=torch.long)
@@ -199,7 +200,7 @@ class DDIMSampler(object):
             if index % log_every_t == 0 or index == total_steps - 1:
                 intermediates['x_inter'].append(img)
                 intermediates['pred_x0'].append(pred_x0)
-
+            pbar.update(1)
         return img, intermediates
 
     @torch.no_grad()
