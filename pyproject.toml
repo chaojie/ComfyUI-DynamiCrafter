@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-dynamicrafter"
+description = "Better Dynamic, Higher Resolution, and Stronger Coherence!"
+version = "1.0.0"
+license = "LICENSE"
+dependencies = ["decord", "einops", "imageio", "omegaconf", "opencv_python", "pandas", "Pillow", "pytorch_lightning", "PyYAML", "tqdm", "transformers", "moviepy", "av", "timm", "scikit-learn", "open_clip_torch==2.22.0", "kornia"]
+
+[project.urls]
+Repository = "https://github.com/chaojie/ComfyUI-DynamiCrafter"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-DynamiCrafter"
+Icon = ""
